@@ -48,5 +48,11 @@ LDAP expose l'annuaire et permet l'énumération de compte :\
 		1. A controler via propriété de la zone DNS / transfert de zone
 		2. Si transfert authoriser : regarder journal d'évenement DNS (observateur evenement / event 6001)
 
+---
+
+Enumération SMB :<br>
+1. Permet de voir les utilisateurs/IP qui sont connecté à des partage SMB
+2. Bloodhound se sert de cette liste pour voir les "has Session" et identifier chemin d'attaque
+3. Exemple : <code>nmap -p 445 --script-enum-sessions.nse --script-args smbuser=normaluser,smbpass=Pa$$w0rd 10.0.0.10</code>
 
 
