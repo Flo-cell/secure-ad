@@ -115,7 +115,24 @@ Déterminer comptes à privilèges
 		3. Pourquoi ? Protéger les compte à privilège peu importe quel est leur conteneur
 		4. RAPPEL : un object hérite des permissions de son conteneur PARENT
 		5. EXEMPLE : admin déplacé dans OU helpDesk, sans SDHolder, les membres helpdesk peuvent réinitialiser son password
-		6. Qui est protégé ? 
+		6. Qui est protégé (group) ?
+			1. Account / Backup / Print /Server Operator
+			2. Administrators
+			3. Domain Admins
+			4. Enterprise ADmins
+			5. Schema ADmins
+			6. Read-Only Domain Controllers
+			7. Replicator
+			8. Enterprise/Key Admins (windows 2019 mini)
+			9. Administrator (user)
+			10. krbtgt (user)
+			11. Domain Controllers (exception : group protégé mais pas contenu)
+		7. Toutes les 60 min -> PDC emulator execute process qui énum grpupe protégé + contenu -> analyse descripteur de sécurité VS permission de SDHolder -> Si non correspondance FLAG + UPDATE
+	2. Certains groupes sensibles non protégés :
+		1. DNSAdmin ( droit executer dll sur DC = injection dll)
+		2. Group Policy Creator Owners
+		3. Incoming Forest Trust Builder
+		4. Remonte Desktop Users
 
 
 
