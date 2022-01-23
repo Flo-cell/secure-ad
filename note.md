@@ -90,4 +90,19 @@ Recommandations :
 5. Désactiver les protocoles obsolètes (SMBv1 par exemple)
 6. Configurer et activer le pare-feu
 
+## Contrer la compromission d'identifiants
+
+Les options :
+1. Brute force
+2. Password spraying (utiliser mdp commun sur multiple user pour ne pas être détecté)
+3. Base de données de comptes compromis
+4. Ecouter le traffic (attaquant deja dedans, et auth en clair sur le réseau)
+5. Keylogger
+6. Phising
+
+---
+
+
+
+
 
