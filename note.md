@@ -42,7 +42,11 @@ LDAP expose l'annuaire et permet l'énumération de compte :\
 	2. Vérifier membres du groupe "Pre-windows 2000 Compatible Access)
 	3. Si il contient Principal de sécurité "Anounymous Logon" = énumération sans auth possible
 	4. Seul "Authenticated User" doit être membre du groupe (ou autre bien identifié)
-	5. 
+7. Via DNS
+	1. Demande de résolution anonymes en testant des noms commun
+	2. Transfert de zone DNS
+		1. A controler via propriété de la zone DNS / transfert de zone
+		2. Si transfert authoriser : regarder journal d'évenement DNS (observateur evenement / event 6001)
 
 
 
