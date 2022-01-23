@@ -62,4 +62,32 @@ Enumération SMB :<br>
 Necessite reboot du serveur<br>
 A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 
+---
+
+Enumération SAM-R :<br>
+1. Outil : SuperScan 4 par exemple
+2. Vu précédement pour anonyme, à désactiver via groupe built-in "Pre windows 2000 Compatible Access)
+3. Restreindre l'API SAM à des groupes particuliers :
+	1. Via GPO : Accès réseau : restreindre les clients autorisés à effectuer des appels distants vers SAM
+	2. Ne pas appliquer sur les DC !
+
+---
+
+Recommandations :
+1. Ne pas mutualiser les DC avec d'autres services
+	1. Sauf service DNS
+	2. DANGER : augmente surface d'attaque
+	3. DANGER : plus de mise à jour avec reboot / impact dispo serveur
+	4. DANGER : Pas de granularité de délégation par rôle (admin local DC = admin local DHCP par ex si mutualisé)
+	5. DANGER : difficulté lors des migration si plusieurs services
+2. Système critique : doit être mis à jour en priorité
+	1. Sinon, être en capacité de détecter la vulnérabilité non appliquée (via doc d'update)
+3. S'assurer de la sécurité physique des DC et systèmes critiques
+	1. Si impossible : RODC
+4. Gérer les sauvegardes
+	1. Faire des sauvegarde
+	2. Les protéger
+5. Désactiver les protocoles obsolètes (SMBv1 par exemple)
+6. Configurer et activer le pare-feu
+
 
