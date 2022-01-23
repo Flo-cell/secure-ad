@@ -56,9 +56,9 @@ Enumération SMB :<br>
 3. Exemple : <code>nmap -p 445 --script-enum-sessions.nse --script-args smbuser=normaluser,smbpass=Pa$$w0rd IP-DC</code>
 4. Pourquoi autant d'users sur le DC en partage ? Car un des partages du DC c'est "sysvol", utile pour DL paramètre de stratégie de groupe (quand PC/User se connecte, il se connecte à SYSVOL)
 5. Désactiver cette fonctionalité via powershell (on retire la permission d'énumération SMB aux users auth) :
-<code>Get-Module -Name NetCease | Format-List</code>
-<code>Get-NetSessionEnumPermission | Out-GridView</code>
-<code>Set-NetSessionEnumPemission</code>
+<code>Get-Module -Name NetCease | Format-List</code><br>
+<code>Get-NetSessionEnumPermission | Out-GridView</code><br>
+<code>Set-NetSessionEnumPemission</code><br>
 Necessite reboot du serveur<br>
 A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 
