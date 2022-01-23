@@ -30,7 +30,7 @@ Enumération des comptes et système permet à l'attaquant d'élaborer un plan d
 
 ---
 
-LDAP expose l'annuaire et permet l'énumération de compte :\
+LDAP expose l'annuaire et permet l'énumération de compte :
 1. Port 389 et 3268 (catalogue global)
 2. 636 et 3269 (version TLS)
 3. Enumération possible qu'après authentification Utilisateur
@@ -50,7 +50,7 @@ LDAP expose l'annuaire et permet l'énumération de compte :\
 
 ---
 
-Enumération SMB :<br>
+**Enumération SMB** :<br>
 1. Permet de voir les utilisateurs/IP qui sont connecté à des partage SMB
 2. Bloodhound se sert de cette liste pour voir les "has Session" et identifier chemin d'attaque
 3. Exemple : <code>nmap -p 445 --script-enum-sessions.nse --script-args smbuser=normaluser,smbpass=Pa$$w0rd IP-DC</code>
@@ -64,7 +64,7 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 
 ---
 
-Enumération SAM-R :<br>
+**Enumération SAM-R :**<br>
 1. Outil : SuperScan 4 par exemple
 2. Vu précédement pour anonyme, à désactiver via groupe built-in "Pre windows 2000 Compatible Access)
 3. Restreindre l'API SAM à des groupes particuliers :
@@ -73,7 +73,7 @@ Enumération SAM-R :<br>
 
 ---
 
-Recommandations :
+**Recommandations** :
 1. Ne pas mutualiser les DC avec d'autres services
 	1. Sauf service DNS
 	2. DANGER : augmente surface d'attaque
@@ -92,7 +92,7 @@ Recommandations :
 
 ## Contrer la compromission d'identifiants
 
-Les options :
+**Les options :**
 1. Brute force
 2. Password spraying (utiliser mdp commun sur multiple user pour ne pas être détecté)
 3. Base de données de comptes compromis
@@ -102,7 +102,7 @@ Les options :
 
 ---
 
-Déterminer comptes à privilèges
+**Déterminer comptes à privilèges :**
 1. 2 comptes : normal et administrateur (restrictions spécifiques)
 2. Quels sont les actions d'administration qui ont un impact sur la sécurité ?
 	1. Modification de compte sensible
@@ -133,6 +133,8 @@ Déterminer comptes à privilèges
 		2. Group Policy Creator Owners
 		3. Incoming Forest Trust Builder
 		4. Remonte Desktop Users
+
+---
 
 
 
