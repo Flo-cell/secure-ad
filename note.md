@@ -102,7 +102,20 @@ Les options :
 
 ---
 
-
+Déterminer comptes à privilèges
+1. 2 comptes : normal et administrateur (restrictions spécifiques)
+2. Quels sont les actions d'administration qui ont un impact sur la sécurité ?
+	1. Modification de compte sensible
+	2. Se connecter sur un système critique
+	3. Executer du code sur un DC
+3. Quels sont les groupes à protéger :
+	1. Groupes protégés par "adminSDHolder"
+		1. Situé dans le conteneur system
+		2. Permissions de l'adminSDHolder = Permission écrite sur tous les objects groupe protégé par SDHolder et leur contenu
+		3. Pourquoi ? Protéger les compte à privilège peu importe quel est leur conteneur
+		4. RAPPEL : un object hérite des permissions de son conteneur PARENT
+		5. EXEMPLE : admin déplacé dans OU helpDesk, sans SDHolder, les membres helpdesk peuvent réinitialiser son password
+		6. Qui est protégé ? 
 
 
 
