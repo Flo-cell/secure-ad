@@ -21,4 +21,11 @@ Tier 2 : Station de travail\
 **But du jeu :**  Rendre la partie 2 longue et difficile, rendre non rentable l'attaque\
 Le détecter le plus vite possible\
 
+## Contrer la reconnaissance
+
+Voir architecture de l'AD : bloodhound (https://github.com/BloodHoundAD/BloodHound)
+=> Affiche les chemins permettant d'arriver aux comptes domains admin
+
+Enumération des comptes et système permet à l'attaquant d'élaborer un plan d'attaque
+
 
