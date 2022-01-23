@@ -37,6 +37,12 @@ LDAP expose l'annuaire et permet l'énumération de compte :\
 4. Enumération anonyme désativé depuis server 2003
 	1. Sauf si dSHeuristics (7eme caractère à 1)
 5. Infos dispo sans auth (RootDSE) non désactivale
+6. SAM-R (security account management remote)
+	1. Interface permettant énumération de compte
+	2. Vérifier membres du groupe "Pre-windows 2000 Compatible Access)
+	3. Si il contient Principal de sécurité "Anounymous Logon" = énumération sans auth possible
+	4. Seul "Authenticated User" doit être membre du groupe (ou autre bien identifié)
+	5. 
 
 
 
