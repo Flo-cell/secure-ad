@@ -136,5 +136,38 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 
 ---
 
+**Renforcer la protection des comptes à privilège**
+
+1. Stratégie local
+	1. Ensemble de paramètres de sécurité
+	2. A renforcer via GPO
+2. Stratégie de groupe
+	1. Imposer les paramètres de manière globale
+3. Outils de gestion
+	1. Microsoft Security Compliance Toolkit
+	2. ADACLScanner
+
+---
+
+**Stratégie de mot de passe**
+
+1. Mot de passe = clef symétrique générée par un humain
+2. FGPP (Fine Grained Password Policies)
+3. Paramètres recommandées :
+	1. longueur minimale > 14
+	2. Compléxité : activée
+	3. Durée max : 30 et 90 jours
+4. Vérrouillage de comtpe :
+	1. Empeche pas : Brute force / password spray / vol ID
+	2. 1 tentative auth != 1 tentative user
+	3. Seuil dépend de la détection de l'entreprise
+	
+
+
+
+
+
+
+
 
 
