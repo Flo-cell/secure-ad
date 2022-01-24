@@ -161,6 +161,49 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 	1. Empeche pas : Brute force / password spray / vol ID
 	2. 1 tentative auth != 1 tentative user
 	3. Seuil dépend de la détection de l'entreprise
+5. Azure AD Password Protection
+	1. Protection password spray (empeche choisir mot commun en pass)
+	2. Azure AD premium P1 (fonctionalité sur site)
+
+---
+
+**S'assurer qu'un compte n'est pas compromis**
+
+1. Azure AD Identity Protection
+2. Azure AD premium P2
+3. Azure AD Connect Password Hash Synchronization option
+4. Aucun moment le mot de passe est partagé avec Azure AD
+
+---
+
+**Sécuriser les authentifications LDAP**
+
+1. Empecher les DC de répondre à une demande LDAP avec password non chiffré
+2. Bind request
+3. GPO : Controleur de domaine : conditions requises pour la signature de serveur LDAP / Exiger la signature
+4. DANGER : mot de passe quand même envoyé en clair mais DC la refuse
+5. Utiliser LDAP sécurisé : port 636
+
+---
+
+**Protocoles obsolètes**
+
+1. LM : 1993
+2. SMBv1 : 2006
+3. NTLMv1 : 1998
+4. Kerberos 3DES : 2000
+5. Wdigest : 1994
+6. Existante du groupe "Protected User" pour bloquer ces vieux protocoles
+
+---
+
+**Kerberos Roasting**
+
+1. Trouver mot de passe sans tentative d'auth : Kerberos roasting
+2. GPO : Sécurité réseau : Configurer les types de chiffrement autorisés pour Kerberos (retirer au moins DES)
+3. User / Propriété / Ne pas cocher dans compte : Utiliser...DES via Kerberos / Cocher AES 256
+4. Si compte de service : donner un gMSA
+5. Ne jamais cocher : La pré auth Kerberos n'est pas nécéssaire
 	
 
 
