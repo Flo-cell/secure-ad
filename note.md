@@ -205,7 +205,7 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 4. Si compte de service : donner un gMSA
 5. Ne jamais cocher : La pré auth Kerberos n'est pas nécéssaire
 	
-
+test
 
 
 
