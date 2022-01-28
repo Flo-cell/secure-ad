@@ -217,6 +217,16 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 	4. Si attaquant à privilège de debug "SeDebugPrivilege" il peut extraire les infos de LSASS
 	5. Via mimikatz
 3. Il faut considérer un compte log sur un PC comme compromis
+4. Comment ne pas exposer ces ID lorsqu'on se connecte ?
+	1. Utiliser la fonction "/RestrictedAdmin" => mstsc /RestrictedAdmin
+	2. Restriction : Pas d'identité sur le réseau si ce n'est celle de la machine elle même
+	3. Utiliser la fonction "/RemoteGuard" => mstsc /RemoteGuard (conserve son identité)
+	4. Restriction : server en face doit être compatible remote guard
+5. Recommandations :
+	1. Désactiver WDigest (via GPO) et monitorer sa réactivation
+	2. Utiliser les modes sécuritaires de RDP (RestrictedAdmin et RemoteGuard)
+
+---
 
 
 
