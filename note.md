@@ -228,7 +228,56 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 
 ---
 
+**Limiter ou les systemes/comptes peuvent se connecter**
 
+1. Pre server 2012 : GPO (interdire l'accès à cet ordinateur à partir du réseau / Interdire l'ouverture ...)
+2. A partir de 2012 :
+	1. Stratégies d'authentification et silos (centre d'administration Active Directory)
+	2. Défini les critères pour que l'obtention d'un TGT soit valide
+	3. Incontournable meme en admin local
+	4. Visualiser son silo : whoami /claims
+	5. Evenement généré pour surveillance (non actif par defaut)
+
+---
+
+**Sécuriser les comptes locaux**
+
+1. Microsoft LAPS
+2. On peut interdir un compte local d'être utilisé à travers le réseaux (le support local pourra se co)
+3. Pare feu windows => Qui peut établir des connections entre machines
+
+---
+
+**Les machines d'administration**
+
+1. PAW : Privilege Access Workstation
+2. Machine physique dédiée
+3. Restrictions réseau / de compte / outils de surveillance
+4. Machine jetable (facilement redéployable)
+5. Serveur de rebond utile, mais seulement si on rebondis depuis des PAW
+6. Connection à une machine d'administration depuis une machine non dédié n'offre aucune sécurité
+
+---
+
+**Délégation Kerberos**
+
+1. Kerberos forwarding :
+	1. User => Front end => Back end
+	2. Si kerberos Forwarding : on autorise front end à demandé ticket au back end pour l'user
+	3. Le back end pense que la demande provient directement de l'user
+2. Front end compromis : on peut se faire passer pour l'user partout
+3. Il existe des options pour limiter cela :
+	1. Dans AD : User / compte / Le compte est sensible et ne peut être délégué
+	2. Délégation contrainte : Propriété / User / Délégation 'n'approuver..."
+
+---
+
+**Relation d'approbation**
+
+1. Pas de compte de domaine approuvée dans vos groupes d'admins
+2. Activer AES dans le compte relation d'approbation
+3. KBSO
+4. Authentification sélective
 
 
 
