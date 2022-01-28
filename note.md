@@ -205,7 +205,19 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 4. Si compte de service : donner un gMSA
 5. Ne jamais cocher : La pré auth Kerberos n'est pas nécéssaire
 	
-test
+---
+
+**Sécurisation contre les mouvements latéraux**
+
+1. Abuse de la fonctionnalité de SSO
+2. Comment ça marche ?
+	1. winlogon.exe collecte le secret à l'ouverture de session
+	2. Il passe enssuite au processus LSASS (cerveau de sécurité Windows)
+	3. LSASS authentifie le user et met en cache les secrets
+	4. Si attaquant à privilège de debug "SeDebugPrivilege" il peut extraire les infos de LSASS
+	5. Via mimikatz
+3. Il faut considérer un compte log sur un PC comme compromis
+
 
 
 
