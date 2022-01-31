@@ -322,3 +322,18 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 1. Permet de détecter toutes les attaques vues
 2. Necessite licence E5
 3. Peut envoyer sur SIEM On Premise
+
+---
+
+## Points à retenir
+
+1. Prévenir les actions de reconnaissance en limitant l'énumération
+2. Pas de mutualisation de services, patching rapide, accès physique, sauvegarde à protéger
+3. Eviter mouvements latéraux
+4. 2 comptes différents pour administration et bureautique (interdire ouverture de session entre tiers)
+5. Définir qui peut faire quoi ?
+6. Utiliser azure AD password protection et Azure AD identity protection
+7. Réduire exposition comptes (pas de mise en cache)
+8. Utiliser LAPS (mot de passe local)
+9. Prévoir des machines dédiées à l'administration
+10. Désactiver protocoles obsolètes
