@@ -279,7 +279,9 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 3. KBSO
 4. Authentification sélective
 
+---
 
+***Attaques post-exploitation***
 
 
 
