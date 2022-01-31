@@ -281,7 +281,29 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 
 ---
 
-***Attaques post-exploitation***
+## Attaques post-exploitation
+
+**Domination du domaine**
+
+1. Pourquoi ?
+	1. Etendre son périmètre
+	2. Déployer malware via GPO
+	3. Rester persistant
+2. Répliquer admin directory pour extraire (attaque DCSync)
+	1. Outils : DSinternal
+	2. Get-ADReplAccount -All -Server DC01 (replication totale)
+	3. Get-ADReplAccount -SamAccountName krbtgt -Server DC01 -Domain CONTOSO
+3. Extraire compte krbtgt (kerberos)
+	1. Générer ses propres tickets (sans être admin)
+	2. mimikatz golden ticket (/ptt PASSTHETICKET)
+4. Changer mot de passe krbtgt ? Utile ?
+	1. 1er changement : ancien marche
+	2. 2eme changement : ancien ne marche plus
+	3. ODD (oportunité detection) : log KRB_AP_ERR_BAD_INTEGRITY (31)(4769 : code erreur 1F) (utilisation vieux ticket kerberos)
+5. Extraire la base de données AD
+	1. Outils à utiliser : wmic
+	2. Se trouve dans c://Windows/NTDS/ntds.dit
+
 
 
 
