@@ -304,8 +304,21 @@ A inclure en stratégie globale, sur l'ensemble des serveurs 445 SMB
 	1. Outils à utiliser : wmic
 	2. Se trouve dans c://Windows/NTDS/ntds.dit
 
+---
 
+## Détecter les activités suspectes
 
+**Défis liés à la détection**
 
+1. Configurer sa stratégie d'audit en limitant bruit et minimum de rétention
+2. Stratégie ordinateur local / conf ordinateur /param windows / param sécu / config avancée de la stratégie d'audit / stratégie audit système
+3. Connaitre la stratégie appliquée : c:\>auditpol /get /category:*
+4. Activer : Audit de création de processus
 
+---
 
+**Microsoft defender for identity**
+
+1. Permet de détecter toutes les attaques vues
+2. Necessite licence E5
+3. Peut envoyer sur SIEM On Premise
